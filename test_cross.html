@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+    <title>测试十字计算功能</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <!-- import bootstrap-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="js/bootstrap/bootstrap.min.css">
+
+
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/json.min.js"></script>
+    <script type="text/javascript" src="js/mathlib.js"></script>
+    <script type="text/javascript" src="js/tools/cross_zhao.js"></script>
+    <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<style>
+    .tools_panel{
+        display: none;
+        position: absolute;
+        right: 0%;
+        bottom: 0%;
+        width: 20%;
+        height: 20%;
+        background-color: yellow;
+        font-size: large;
+        margin-bottom: 0px;
+        text-align: center;
+        -webkit-border-radius: 10px 0px 0px 0px;
+        -moz-border-radius: 10px 0px 0px 0px;
+        border-radius: 10px 0px 0px 0px;
+    }
+    /*.answer{*/
+        /*display: none;*/
+        /*position: absolute;*/
+        /*right: 0%;*/
+        /*bottom: 0%;*/
+        /*width: 15%;*/
+        /*height: 20%;*/
+        /*background-color: yellow;*/
+        /*font-size: large;*/
+        /*text-align: center;*/
+    /*}*/
+    .tools_group{
+        position: absolute;
+        left: 10%;
+        bottom: 0%;
+        text-align: center;
+        width: 80%;
+        height: 10%;
+        /*background-color: blue;*/
+    }
+    .btn-tools{
+        display: none;
+        width: 20%;
+        height: 100%;
+    }
+
+
+</style>
+
+<script>
+    $(function()
+    {
+        $('#cross_cal').mouseover(function () {
+            $('.btn-tools').fadeIn();
+//        event.stopPropagation();
+        });
+        $('#cross_cal').mouseleave(function () {
+            $('.btn-tools').fadeOut();
+//        event.stopPropagation();
+        });
+    });
+</script>
+
+<div class="tools_group" id="cross_cal" >
+    <button class="btn btn-success btn-lg btn-tools"  onclick="$('.tools_panel').toggle()">Cross计算</button>
+    <button class="btn btn-success btn-lg btn-tools">打乱图案</button>
+    <button class="btn btn-success btn-lg btn-tools">打乱生成</button>
+    <button class="btn btn-success btn-lg btn-tools">解法生成</button>
+</div>
+
+
+
+<div>
+    <div class="input-group input-group-lg">
+        <input type="text"  id="scramble"  value="D' F' D' R' L' B L' F' L2 F' R2 D2 B L2 U2 F' D2 F U'">
+    </div>
+    <br>
+    <button class="cross">计算十字</button>
+    <button class="xcross">计算XC</button>
+    <button class="clear" onclick="$('.answer').empty()">清除</button>
+</div>
+
+<div class="tools_panel">
+
+    <p>十字解法</p>
+    <div class="answer">
+
+    </div>
+
+</div>
+
+
+
+
+</body>
+</html>
